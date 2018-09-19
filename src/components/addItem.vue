@@ -26,7 +26,10 @@
                   </div>
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
-                    <input v-model="imageUrl" type="text" class="form-control" id="urlArea" placeholder="image URL (optional)"></input>
+
+                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input>
+                    <!-- <input type="file" @change="onFileSelected"> -->
+                    
                   </div>
                 </form>
             </div>
@@ -35,7 +38,7 @@
               <button @click="addItem" type='button' class="btn btn-primary float-right">Add Item</button>
             </div>
       </b-modal>          
-   </div>
+    </div>
 </template>
 
 <script>
@@ -56,6 +59,9 @@ export default {
     };
   },
   methods: {
+    onFileSelected(event) {
+      this.imageUrl = event.target.files[0];
+    },
     showModal() {
       this.$refs.addItemModal.show();
     },
