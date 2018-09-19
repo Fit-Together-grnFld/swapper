@@ -1,0 +1,141 @@
+2018-09-18 12:25:07.387 CDT [25749] LOG:  listening on IPv6 address "::1", port 5432
+2018-09-18 12:25:07.387 CDT [25749] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-09-18 12:25:07.388 CDT [25749] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-09-18 12:25:07.400 CDT [25750] LOG:  database system was shut down at 2018-09-18 12:24:32 CDT
+2018-09-18 12:25:07.403 CDT [25749] LOG:  database system is ready to accept connections
+2018-09-18 12:27:38.358 CDT [25762] ERROR:  syntax error at or near "?" at character 1
+2018-09-18 12:27:38.358 CDT [25762] STATEMENT:  ?
+	/?
+	/?;
+2018-09-18 12:30:21.107 CDT [25762] ERROR:  syntax error at or near "/" at character 1
+2018-09-18 12:30:21.107 CDT [25762] STATEMENT:  /q
+	q
+	help
+	help
+	CREATE EXTENSION postgis;
+2018-09-18 14:11:54.602 CDT [25788] ERROR:  syntax error at or near "CREATE" at character 26
+2018-09-18 14:11:54.602 CDT [25788] STATEMENT:  SELECT PostGIS_Version()
+	CREATE EXTENSION postgis
+	SELECT PostGIS_Version();
+2018-09-18 14:13:31.132 CDT [25977] FATAL:  role "root" does not exist
+2018-09-18 14:14:41.175 CDT [26012] FATAL:  role "usr" does not exist
+2018-09-18 14:24:14.432 CDT [26103] FATAL:  role "kenneth" does not exist
+2018-09-18 14:31:10.584 CDT [26148] FATAL:  role "root" does not exist
+2018-09-18 14:33:45.323 CDT [26391] FATAL:  role "root" does not exist
+2018-09-18 15:04:18.008 CDT [27011] FATAL:  database "swappr-dev" does not exist
+2018-09-18 15:10:11.179 CDT [27066] FATAL:  database "kenneththomas" does not exist
+2018-09-18 15:10:36.632 CDT [27073] FATAL:  database "kenneththomas" does not exist
+2018-09-18 15:11:51.067 CDT [27089] ERROR:  database "swappr-dev" already exists
+2018-09-18 15:11:51.067 CDT [27089] STATEMENT:  CREATE DATABASE "swappr-dev";
+2018-09-18 15:45:54.766 CDT [27395] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 15:45:54.766 CDT [27395] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 15:47:54.747 CDT [27405] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 15:47:54.747 CDT [27405] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 15:50:08.152 CDT [27422] FATAL:  database "root" does not exist
+2018-09-18 15:53:37.967 CDT [27469] FATAL:  database "kenneththomas" does not exist
+2018-09-18 15:54:52.520 CDT [27480] FATAL:  database "root" does not exist
+2018-09-18 15:54:57.045 CDT [27484] FATAL:  database "root" does not exist
+2018-09-18 15:55:02.319 CDT [27487] FATAL:  database "root" does not exist
+2018-09-18 15:55:34.285 CDT [27492] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 15:55:34.285 CDT [27492] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 15:56:03.026 CDT [27498] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 15:56:03.026 CDT [27498] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 15:57:04.003 CDT [27505] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 15:57:04.003 CDT [27505] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 15:59:08.372 CDT [27536] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 15:59:08.372 CDT [27536] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 15:59:17.404 CDT [27536] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 15:59:17.404 CDT [27536] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:02:22.960 CDT [27569] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:02:22.960 CDT [27569] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:02:27.112 CDT [27569] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:02:27.112 CDT [27569] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:03:25.811 CDT [27587] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:03:25.811 CDT [27587] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:03:34.499 CDT [27587] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:03:34.499 CDT [27587] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:03:48.125 CDT [27599] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:03:48.125 CDT [27599] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:05:48.143 CDT [27609] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:05:48.143 CDT [27609] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:06:27.203 CDT [27620] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:06:27.203 CDT [27620] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:06:33.805 CDT [27620] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:06:33.805 CDT [27620] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:06:42.158 CDT [27620] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:06:42.158 CDT [27620] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:08:42.176 CDT [27638] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:08:42.176 CDT [27638] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:14:26.367 CDT [27680] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:14:26.367 CDT [27680] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:14:47.123 CDT [27684] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:14:47.123 CDT [27684] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:16:19.199 CDT [27717] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:16:19.199 CDT [27717] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:16:24.817 CDT [27717] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:16:24.817 CDT [27717] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:16:41.444 CDT [27722] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:16:41.444 CDT [27722] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:16:46.589 CDT [27722] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:16:46.589 CDT [27722] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:16:48.585 CDT [27722] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:16:48.585 CDT [27722] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:17:03.182 CDT [27727] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:17:03.182 CDT [27727] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:19:03.192 CDT [27735] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:19:03.192 CDT [27735] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:09.044 CDT [27754] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:09.044 CDT [27754] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:12.986 CDT [27754] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:12.986 CDT [27754] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:31.318 CDT [27764] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:31.318 CDT [27764] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:40.729 CDT [27764] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:40.729 CDT [27764] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:43.515 CDT [27764] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:43.515 CDT [27764] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:46.574 CDT [27764] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:46.574 CDT [27764] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:48.712 CDT [27774] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:48.712 CDT [27774] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:50.556 CDT [27774] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:50.556 CDT [27774] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:21:53.728 CDT [27774] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:21:53.728 CDT [27774] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:23:53.746 CDT [27786] ERROR:  relation "Categories" does not exist at character 63
+2018-09-18 16:23:53.746 CDT [27786] STATEMENT:  SELECT "id", "name", "url_img", "createdAt", "updatedAt" FROM "Categories" AS "Category";
+2018-09-18 16:34:05.824 CDT [28134] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 16:34:05.824 CDT [28134] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '1' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 16:34:16.565 CDT [28139] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 16:34:16.565 CDT [28139] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '1' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 16:35:52.961 CDT [28151] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 16:35:52.961 CDT [28151] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '1' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 17:05:31.558 CDT [28331] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 17:05:31.558 CDT [28331] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '1' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 17:27:55.941 CDT [28523] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 17:27:55.941 CDT [28523] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '1' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 17:28:16.569 CDT [28523] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 17:28:16.569 CDT [28523] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '1' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 17:30:04.469 CDT [28556] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 17:30:04.469 CDT [28556] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '1' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 19:19:53.215 CDT [29070] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 19:19:53.215 CDT [29070] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '1' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 19:22:13.125 CDT [29090] ERROR:  value too long for type character varying(255)
+2018-09-18 19:22:13.125 CDT [29090] STATEMENT:  INSERT INTO "Items" ("id","description","name","url_img","createdAt","updatedAt","id_user","id_category") VALUES (DEFAULT,'a waffle pic','waffle','https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi729We5sXdAhVQS60KHRAjCZAQjRx6BAgBEAU&url=https%3A%2F%2Fwww.tablespoon.com%2Frecipes%2Fwaffle-breakfast-taco%2F516d2ad0-0db1-44ce-8abc-209f655b9175&psig=AOvVaw2nGDngyJfqgoUeW35Hh6KV&ust=1537402884614683','2018-09-19 00:22:13.112 +00:00','2018-09-19 00:22:13.112 +00:00','1',4) RETURNING *;
+2018-09-18 19:22:18.710 CDT [29090] ERROR:  value too long for type character varying(255)
+2018-09-18 19:22:18.710 CDT [29090] STATEMENT:  INSERT INTO "Items" ("id","description","name","url_img","createdAt","updatedAt","id_user","id_category") VALUES (DEFAULT,'a waffle pic','waffle','https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi729We5sXdAhVQS60KHRAjCZAQjRx6BAgBEAU&url=https%3A%2F%2Fwww.tablespoon.com%2Frecipes%2Fwaffle-breakfast-taco%2F516d2ad0-0db1-44ce-8abc-209f655b9175&psig=AOvVaw2nGDngyJfqgoUeW35Hh6KV&ust=1537402884614683','2018-09-19 00:22:18.707 +00:00','2018-09-19 00:22:18.707 +00:00','1',4) RETURNING *;
+2018-09-18 19:25:35.475 CDT [29117] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 19:25:35.475 CDT [29117] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '2' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 19:25:41.832 CDT [29118] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 19:25:41.832 CDT [29118] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '2' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 19:25:44.043 CDT [29117] ERROR:  invalid input syntax for integer: "" at character 225
+2018-09-18 19:25:44.043 CDT [29117] STATEMENT:  SELECT "id", "pending", "accepted", "createdAt", "updatedAt", "id_user", "id_item_offered", "id_item_desired" FROM "Transactions" AS "Transaction" WHERE ("Transaction"."id_user" = '2' OR ("Transaction"."id_item_desired" IN ('') AND "Transaction"."accepted" = true));
+2018-09-18 19:33:47.609 CDT [29193] ERROR:  value too long for type character varying(255)
+2018-09-18 19:33:47.609 CDT [29193] STATEMENT:  INSERT INTO "Items" ("id","description","name","url_img","createdAt","updatedAt","id_user","id_category") VALUES (DEFAULT,'car','car','https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjtgo3z6MXdAhUJQ6wKHSZ0BIYQjRx6BAgBEAU&url=https%3A%2F%2Fwww.wired.com%2Fstory%2Ffuture-cars-roundup-sep-15%2F&psig=AOvVaw0Oh4s4MeAnLF5lZNIpZCwz&ust=1537403612613850','2018-09-19 00:33:47.597 +00:00','2018-09-19 00:33:47.597 +00:00','2',2) RETURNING *;
+2018-09-18 19:33:56.374 CDT [29193] ERROR:  value too long for type character varying(255)
+2018-09-18 19:33:56.374 CDT [29193] STATEMENT:  INSERT INTO "Items" ("id","description","name","url_img","createdAt","updatedAt","id_user","id_category") VALUES (DEFAULT,'car','car','https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjtgo3z6MXdAhUJQ6wKHSZ0BIYQjRx6BAgBEAU&url=https%3A%2F%2Fwww.wired.com%2Fstory%2Ffuture-cars-roundup-sep-15%2F&psig=AOvVaw0Oh4s4MeAnLF5lZNIpZCwz&ust=1537403612613850','2018-09-19 00:33:56.368 +00:00','2018-09-19 00:33:56.368 +00:00','2',3) RETURNING *;
+2018-09-18 19:37:09.799 CDT [29211] ERROR:  value too long for type character varying(255)
+2018-09-18 19:37:09.799 CDT [29211] STATEMENT:  INSERT INTO "Items" ("id","description","name","url_img","createdAt","updatedAt","id_user","id_category") VALUES (DEFAULT,'a lil kid from the web','a baby','https://www.google.com/imgres?imgurl=http%3A%2F%2Fdcmusicdownload.com%2Fwp-content%2Fuploads%2F2015%2F11%2FKC.jpg&imgrefurl=http%3A%2F%2Fdcmusicdownload.com%2F2017%2F08%2F15%2Fjust-announced-kid-cudi-will-play-echostage-in-october%2F&docid=pBgx8L-XRDdvSM&tbnid=moZTDXOkV0XsaM%3A&vet=10ahUKEwiG-cXH6cXdAhVMMawKHU3SDVEQMwjXAihBMEE..i&w=990&h=660&bih=731&biw=1230&q=kid&ved=0ahUKEwiG-cXH6cXdAhVMMawKHU3SDVEQMwjXAihBMEE&iact=mrc&uact=8','2018-09-19 00:37:09.753 +00:00','2018-09-19 00:37:09.753 +00:00','2',3) RETURNING *;
+2018-09-18 19:37:34.620 CDT [29213] ERROR:  value too long for type character varying(255)
+2018-09-18 19:37:34.620 CDT [29213] STATEMENT:  INSERT INTO "Items" ("id","description","name","url_img","createdAt","updatedAt","id_user","id_category") VALUES (DEFAULT,'mr cudi','kidd','https://www.google.com/imgres?imgurl=http%3A%2F%2Fdcmusicdownload.com%2Fwp-content%2Fuploads%2F2015%2F11%2FKC.jpg&imgrefurl=http%3A%2F%2Fdcmusicdownload.com%2F2017%2F08%2F15%2Fjust-announced-kid-cudi-will-play-echostage-in-october%2F&docid=pBgx8L-XRDdvSM&tbnid=moZTDXOkV0XsaM%3A&vet=10ahUKEwiG-cXH6cXdAhVMMawKHU3SDVEQMwjXAihBMEE..i&w=990&h=660&bih=731&biw=1230&q=kid&ved=0ahUKEwiG-cXH6cXdAhVMMawKHU3SDVEQMwjXAihBMEE&iact=mrc&uact=8','2018-09-19 00:37:34.615 +00:00','2018-09-19 00:37:34.615 +00:00','2',3) RETURNING *;
+2018-09-19 12:21:30.325 CDT [31218] FATAL:  database "kenneththomas" does not exist

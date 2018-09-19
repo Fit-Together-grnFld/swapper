@@ -31,7 +31,9 @@
         <div class="card pl-3 my-1 w-100 item-box">
           <div class="container">
             <div class="row">
+
               <item-view v-for="(item,index) in profileItems" :item='item' :key='index' v-on:deleted-item="getUserItems"></item-view>
+              
             </div>
           </div>
         </div>
