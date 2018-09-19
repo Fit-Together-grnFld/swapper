@@ -26,8 +26,8 @@
                   </div>
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
-
-                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input>
+                    <input v-model="imageUrl" type="text" class="form-control" id="urlArea" placeholder="image URL (optional)"></input>
+                    <!-- <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
                     <!-- <input type="file" @change="onFileSelected"> -->
                     
                   </div>
@@ -75,8 +75,9 @@ export default {
           description: this.description,
           id_user: this.userId,
           id_category: this.categoryId,
-          url_img: this.imageUrl.length ? this.imageUrl : null,
+          url_img: this.imageUrl.length ? this.imageUrl : 'https://lh3.googleusercontent.com/-ArPLZCGxfUU/VjurWOWnGbI/AAAAAAAAAM8/QFCBWkBXrHU/w530-h538-n-rw/deadpool_approves_by_kawkat-d68keqv.png',
         };
+        console.log(this.imageUrl);
         this.hideModal();
         axios.post('/items', config)
           .then((item) => {

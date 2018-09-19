@@ -2,7 +2,7 @@
     <div :class="item.id">
       <div class="item-card card col-12 mx-1 ml-sm-4 ml-md-4 p-0" @click="show" style="margin: 5px; border-style: outset; width: 10rem; height: 9rem;">
         <div class="card-body p-0 m-0">
-          <img class="item-img rounded-top p-0 m-0" src="../../static/test/test-img.jpg">
+          <img class="item-img rounded-top p-0 m-0" :src="item.url_img">
         </div>
         <div class="card-footer px-0 pt-1 m-0 border-none">
           <h6 class="card-title">{{ item.name }}</h6>
@@ -35,6 +35,10 @@ export default {
     };
   },
   methods: {
+    getIcon() {
+      console.log(this.$refs[this.item.img]);
+      return this.$refs[this.item.img];
+    },
     show() {
       this.$refs[this.item.id].show();
     },

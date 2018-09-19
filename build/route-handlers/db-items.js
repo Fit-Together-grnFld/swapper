@@ -18,6 +18,17 @@ app.get('/items', (req, res) => {
     });
 });
 
+// app.get('/oneItem', (req, res) => {
+//   const { id_user } = req.headers;
+//   db.Item.findOne({ where: { id_user } })
+//     .then(items =>
+//       res.send(items))
+//     .catch((err) => {
+//       console.error(err);
+//       res.send(500);
+//     });
+// });
+
 app.post('/items', (req, res) => {
   const newItem = req.body;
   if (newItem.id_category === undefined) {

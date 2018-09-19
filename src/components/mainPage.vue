@@ -221,9 +221,12 @@ export default {
     },
     getCategoryPic() {
       const categoryID = this.currentTradeItem.id_category;
-      const categoryPicArray = this.categories.filter(category =>
-        categoryID === category.id)[0].url_img.split('cats');
-      this.categoryPic = `../static/cats${categoryPicArray[1]}`;
+      if (categoryID) {
+        const categoryPicArray = this.categories.filter(category => categoryID === category.id)[0].url_img.split('cats');
+        this.categoryPic = `../static/cats${categoryPicArray[1]}`;
+      } else {
+        this.categoryPic = 'https://vignette.wikia.nocookie.net/xmenmovies/images/7/7c/Deadpool_%28Thumbs_Up_-_Transparent%29.png/revision/latest/scale-to-width-down/350?cb=20170324222613';
+      }
     },
   },
   mounted() {
