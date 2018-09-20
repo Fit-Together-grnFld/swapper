@@ -21,7 +21,7 @@
           <a href="#" @click="hide" class="btn btn-primary float-right">Close</a>
         </div>
       </b-modal>          
-   </div>
+    </div>
 </template>
 
 <script>

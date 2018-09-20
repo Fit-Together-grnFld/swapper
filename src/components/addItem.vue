@@ -26,9 +26,8 @@
                   </div>
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
-
                     <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)" />
-                 </div>
+                  </div>
                 </form>
             </div>
             <div slot="modal-footer" class="w-100">
@@ -36,7 +35,7 @@
               <button @click="addItem" type='button' class="btn btn-primary float-right">Add Item</button>
             </div>
       </b-modal>          
-   </div>
+    </div>
 </template>
 
 <script>
@@ -54,9 +53,14 @@ export default {
       selectedCategory: 'Categories',
       categoryId: null,
       imageUrl: null,
+      stars: null,
     };
   },
   methods: {
+    vueShared(event) {
+      this.stars = event;
+      console.log(this.stars);
+    },
     onFileSelected(event) {
       const file = event.target.files[0];
       const reader = new FileReader();
@@ -74,13 +78,15 @@ export default {
       this.$refs.addItemModal.hide();
     },
     addItem() {
-      if (this.name.length !== 0 && this.description.length !== 0 && this.categoryId !== null) {
+      if (this.name.length !== 0 && this.description.length !== 0 && this.categoryId !== null
+      && this.stars !== null) {
         const config = {
           name: this.name,
           description: this.description,
           id_user: this.userId,
           id_category: this.categoryId,
           url_img: this.imageUrl.length ? this.imageUrl : 'https://lh3.googleusercontent.com/-ArPLZCGxfUU/VjurWOWnGbI/AAAAAAAAAM8/QFCBWkBXrHU/w530-h538-n-rw/deadpool_approves_by_kawkat-d68keqv.png',
+          stars: this.stars,
         };
         console.log(this.imageUrl);
         this.hideModal();
@@ -92,6 +98,7 @@ export default {
             this.$emit('new-item', item);
             this.categoryId = null;
             this.selectedCategory = 'Categories';
+            this.stars = 2;
           })
           .catch(err => console.error(err));
       }
