@@ -27,9 +27,20 @@
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
 
-                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input>
+                    <!-- <input v-model="imageUrl" type="text" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
+
+                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
                     <!-- <input type="file" @change="onFileSelected"> -->
-                    
+
+                    <!-- <button @click="onPickFile">Choose-img-file</button>
+                    <input 
+                    type="file"
+                    ref='fileInput'
+                    accept="image/*"
+                    style="display:none"
+                    @change="onFilePicked"
+                    /> -->
+
                   </div>
                 </form>
             </div>
@@ -38,7 +49,7 @@
               <button @click="addItem" type='button' class="btn btn-primary float-right">Add Item</button>
             </div>
       </b-modal>          
-    </div>
+   </div>
 </template>
 
 <script>
@@ -55,13 +66,42 @@ export default {
       categories: [],
       selectedCategory: 'Categories',
       categoryId: null,
-      imageUrl: '',
+      imageUrl: null,
     };
   },
   methods: {
     onFileSelected(event) {
-      this.imageUrl = event.target.files[0];
+  // this.imageUrl = event.target.files[0];
+      const file = event.target.files[0];
+
+      // const fileReader = new FileReader();
+      // fileReader.addEventListener('load', () => {
+      //   this.imageUrl = fileReader.result;
+      // });
+      // fileReader.readAsDataURL(file);
+
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        this.imageUrl = reader.result;
+      }, false);
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
     },
+    // onPickFile() {
+    //   this.$refs.fileInput.click();
+    // },
+    // onFilePicked(event) {
+    //   event.preventDefault();
+    //   const file = event.target.files[0];
+
+    //   const fileReader = new FileReader();
+    //   fileReader.addEventListener('load', () => {
+    //     this.imageUrl = fileReader.result;
+    //   });
+    //   fileReader.readAsDataURL(file);
+    // },
     showModal() {
       this.$refs.addItemModal.show();
     },
