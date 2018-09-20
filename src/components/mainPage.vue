@@ -128,7 +128,7 @@ export default {
     },
     dropdownClick({ id, name }) {
       this.selectedCategory = name;
-      this.categoryId = id;
+      this.categoryID = id;
     },
     getTradeOffers() {
       if (!this.profileItems.length) {
@@ -242,7 +242,11 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        this.getTradeItem();
+        if (!this.categoryID) {
+          this.getTradeItem();
+        } else {
+          this.getSortedItem();
+        }
         this.hide();
       })
       .catch((error) => {
@@ -268,7 +272,11 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        this.getTradeItem();
+        if (!this.categoryID) {
+          this.getTradeItem();
+        } else {
+          this.getSortedItem();
+        }
         this.hide();
       })
       .catch((error) => {
@@ -287,7 +295,13 @@ export default {
   },
   mounted() {
     this.getUserItems()
-    .then(this.getTradeItem)
+    .then(() => {
+      if (!this.categoryID) {
+        this.getTradeItem();
+      } else {
+        this.getSortedItem();
+      }
+    })
     .then(this.getTradeOffers);
   },
 };
