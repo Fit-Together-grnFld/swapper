@@ -27,12 +27,7 @@
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
 
-                    <!-- <input v-model="imageUrl" type="text" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
-
                     <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
-                    <!-- <input type="file" @change="onFileSelected"> -->
-
-                    <!-- <button @click="onPickFile">Choose-img-file</button>
                     <input 
                     type="file"
                     ref='fileInput'
