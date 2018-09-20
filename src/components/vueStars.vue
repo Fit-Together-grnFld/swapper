@@ -29,7 +29,7 @@ export default {
     max: { type: Number, required: false, default: 5 },
     value: { type: Number, required: false, default: 0 },
     name: { type: String, required: false, default: 'rating' },
-    char: { type: String, required: false, default: '★' },
+    char: { type: String, required: false, default: '✵' },
     inactiveChar: { type: String, required: false, default: null },
     readonly: { type: Boolean, required: false, default: false },
     activeColor: { type: String, required: false, default: '#FD0' },

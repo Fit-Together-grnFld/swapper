@@ -19,7 +19,6 @@
           </div>
           <div class="col-2">
             <button class="btn btn-test signout float-right" @click="auth.logout">Sign Out</button>
-            </button>
           </div>
           <div>
             <b-dropdown id="ddown1" :text="selectedCategory" class="m-md-2">
