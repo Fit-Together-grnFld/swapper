@@ -27,16 +27,8 @@
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
 
-                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
-                    <input 
-                    type="file"
-                    ref='fileInput'
-                    accept="image/*"
-                    style="display:none"
-                    @change="onFilePicked"
-                    /> -->
-
-                  </div>
+                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)" />
+                 </div>
                 </form>
             </div>
             <div slot="modal-footer" class="w-100">
