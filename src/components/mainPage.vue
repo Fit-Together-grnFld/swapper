@@ -219,7 +219,6 @@ export default {
         console.error(error);
       });
     },
-
     acceptTradeItem() {
       if (!this.currentTradeItem.id) {
         this.offeredItems = [];

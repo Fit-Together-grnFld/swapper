@@ -72,6 +72,7 @@ app.get('/transactions', (req, res) => {
     });
   });
 });
+
 app.post('/transactions', (req, res) => {
   const { data: itemArray } = req.body;
   const promises = itemArray.map((item) => {
