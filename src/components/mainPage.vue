@@ -153,12 +153,23 @@ export default {
         });
     },
     getTradeItem() {
-      const config = {
-        headers: {
-          id_user: this.userId,
-          items: this.profileItems.map(item => item.id),
-        },
-      };
+      let config;
+      if (this.categoryID !== null) {
+        config = {
+          headers: {
+            id_user: this.userId,
+            categoryId: this.categoryID,
+            items: this.profileItems.map(item => item.id),
+          },
+        };
+      } else {
+        config = {
+          headers: {
+            id_user: this.userId,
+            items: this.profileItems.map(item => item.id),
+          },
+        };
+      }
       axios.get('/transactions', config)
       .then(({ data: tradeItem }) => {
         if (typeof tradeItem === 'string') {
