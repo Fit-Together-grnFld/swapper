@@ -27,7 +27,15 @@
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
 
-                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"/>
+                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
+                    <input 
+                    type="file"
+                    ref='fileInput'
+                    accept="image/*"
+                    style="display:none"
+                    @change="onFilePicked"
+                    /> -->
+
                   </div>
                 </form>
             </div>
