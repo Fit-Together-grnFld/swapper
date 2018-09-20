@@ -11,6 +11,7 @@ app.get('/categories', (req, res) => {
   db.Category
     .findAll({})
     .then((categories) => {
+      // console.log(categories);
       res.send(categories);
     })
     .catch((error) => {

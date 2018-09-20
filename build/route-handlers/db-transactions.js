@@ -49,6 +49,7 @@ const getSeenItems = (userId, itemArray) =>
       console.error(err));
 
 app.get('/transactions', (req, res) => {
+  // console.log(req.headers);
   const { id_user: userId, items } = req.headers;
   const itemArray = items.split(',');
   getSeenItems(userId, itemArray).then((itemIds) => {
@@ -71,7 +72,6 @@ app.get('/transactions', (req, res) => {
     });
   });
 });
-
 app.post('/transactions', (req, res) => {
   const { data: itemArray } = req.body;
   const promises = itemArray.map((item) => {
