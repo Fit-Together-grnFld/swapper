@@ -26,16 +26,11 @@
                   </div>
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
-
-                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
-                    <input 
-                    type="file"
-                    ref='fileInput'
-                    accept="image/*"
-                    style="display:none"
-                    @change="onFilePicked"
-                    /> -->
-
+                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="descriotionArea">Item quality</label>
+                    <vue-stars ></vue-stars>
                   </div>
                 </form>
             </div>
@@ -44,7 +39,7 @@
               <button @click="addItem" type='button' class="btn btn-primary float-right">Add Item</button>
             </div>
       </b-modal>          
-   </div>
+    </div>
 </template>
 
 <script>

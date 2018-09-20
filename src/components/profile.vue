@@ -6,7 +6,7 @@
           <div class="col-5">
             <img src="../assets/logo-white.png" class="float-left" style="width: 120px;">
           </div>
-         <div class="col-2">
+          <div class="col-2">
             <div style="width: 7em;">
               <button class="btn btn-test btn-block float-right" @click="mainMenu">Swap!</button>
             </div>
@@ -19,7 +19,6 @@
           </div>
           <div class="col-2">
             <button class="btn btn-test signout float-right" @click="auth.logout">Sign Out</button>
-            </button>
           </div>
         </div>
       </div>
