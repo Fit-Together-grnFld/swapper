@@ -97,6 +97,7 @@ export default {
   data() {
     return {
       selectedCategory: 'Categories',
+      categoryID: null,
       currentTradeItem: {},
       profileItems: [],
       tradeOffers: [],
@@ -205,6 +206,7 @@ export default {
           id_user: this.userId,
           id_item_offered: this.currentTradeItem.id,
           id_item_desired: this.currentTradeItem.id,
+          cat: this.cat,
           pending: false,
           accepted: false,
         },
