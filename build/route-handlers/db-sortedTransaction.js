@@ -40,6 +40,7 @@ const getSeenItems = (userId, itemArray) =>
     console.error(err));
 
 app.get('/sortedTransactions', (req, res) => {
+  console.log('sorted');
   console.log(req.headers);
   const {
     id_user: userId,
