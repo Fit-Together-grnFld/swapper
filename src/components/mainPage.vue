@@ -284,8 +284,8 @@ export default {
       });
     },
     getCategoryPic() {
-      this.categoryId = this.currentTradeItem.id_category;
-      if (this.categoryId) {
+      const categoryId = this.currentTradeItem.id_category;
+      if (categoryId) {
         const categoryPicArray = this.categories.filter(category => this.categoryId === category.id)[0].url_img.split('cats');
         this.categoryPic = `../static/cats${categoryPicArray[1]}`;
       } else {
