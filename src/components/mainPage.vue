@@ -21,13 +21,6 @@
             <button class="btn btn-test signout float-right" @click="auth.logout">Sign Out</button>
             </button>
           </div>
-          <div>
-            <b-dropdown id="ddown1" :text="selectedCategory" class="m-md-2">
-              <div class="scrollable-menu">
-                <b-dropdown-item v-for="(category,index) in categories" :category='category' :key='index' @click="dropdownClick(category)">{{ category.name }}</b-dropdown-item>
-              </div>
-            </b-dropdown>
-          </div>
         </div>
       </div>
     </nav>
@@ -96,7 +89,6 @@ export default {
   props: ['auth', 'authentication', 'userId', 'categories'],
   data() {
     return {
-      selectedCategory: 'Categories',
       currentTradeItem: {},
       profileItems: [],
       tradeOffers: [],
@@ -116,19 +108,6 @@ export default {
         this.profileItems = userItems;
       })
       .catch(err => console.error(err));
-    },
-    getCategories() {
-      axios.get('/categories')
-      .then(({ data: categories }) => {
-        this.categories = categories;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    },
-    dropdownClick({ id, name }) {
-      this.selectedCategory = name;
-      this.categoryId = id;
     },
     getTradeOffers() {
       if (!this.profileItems.length) {
@@ -167,7 +146,7 @@ export default {
             id: null,
           };
           this.currentTradeItem = noItemResponse;
-          this.categoryPic = 'http://www.clker.com/cliparts/A/x/z/U/T/p/no-trade-md.png';
+          this.categoryPic = '';
         } else {
           this.currentTradeItem = tradeItem;
           if (tradeItem.url_img) {
@@ -196,8 +175,7 @@ export default {
     },
     rejectTradeItem() {
       if (!this.currentTradeItem.id) {
-        this.offeredItems = [];
-        this.hide();
+        this.getTradeItem();
         return;
       }
       const config = { data: [
@@ -210,16 +188,11 @@ export default {
         },
       ] };
       axios.post('/transactions', config)
-      .then(() => {
-        this.offeredItems = [];
-        this.getTradeItem();
-        this.hide();
-      })
+      .then(this.getTradeItem)
       .catch((error) => {
         console.error(error);
       });
     },
-
     acceptTradeItem() {
       if (!this.currentTradeItem.id) {
         this.offeredItems = [];
