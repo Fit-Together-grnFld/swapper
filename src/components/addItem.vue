@@ -71,37 +71,15 @@ export default {
   },
   methods: {
     onFileSelected(event) {
-  // this.imageUrl = event.target.files[0];
       const file = event.target.files[0];
-
-      // const fileReader = new FileReader();
-      // fileReader.addEventListener('load', () => {
-      //   this.imageUrl = fileReader.result;
-      // });
-      // fileReader.readAsDataURL(file);
-
       const reader = new FileReader();
       reader.addEventListener('load', () => {
         this.imageUrl = reader.result;
       }, false);
-
       if (file) {
         reader.readAsDataURL(file);
       }
     },
-    // onPickFile() {
-    //   this.$refs.fileInput.click();
-    // },
-    // onFilePicked(event) {
-    //   event.preventDefault();
-    //   const file = event.target.files[0];
-
-    //   const fileReader = new FileReader();
-    //   fileReader.addEventListener('load', () => {
-    //     this.imageUrl = fileReader.result;
-    //   });
-    //   fileReader.readAsDataURL(file);
-    // },
     showModal() {
       this.$refs.addItemModal.show();
     },
@@ -115,8 +93,9 @@ export default {
           description: this.description,
           id_user: this.userId,
           id_category: this.categoryId,
-          url_img: this.imageUrl.length ? this.imageUrl : null,
+          url_img: this.imageUrl.length ? this.imageUrl : 'https://lh3.googleusercontent.com/-ArPLZCGxfUU/VjurWOWnGbI/AAAAAAAAAM8/QFCBWkBXrHU/w530-h538-n-rw/deadpool_approves_by_kawkat-d68keqv.png',
         };
+        console.log(this.imageUrl);
         this.hideModal();
         axios.post('/items', config)
           .then((item) => {
