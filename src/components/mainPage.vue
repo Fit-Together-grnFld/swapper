@@ -20,7 +20,7 @@
           <div class="col-2">
             <button class="btn btn-test signout float-right" @click="auth.logout">Sign Out</button>
           </div>
-          <div>
+          <div class="dropdown">
             <b-dropdown id="ddown1" :text="selectedCategory" class="m-md-2">
               <div class="scrollable-menu">
                 <b-dropdown-item v-for="(category,index) in categories" :category='category' :key='index' @click="dropdownClick(category)">{{ category.name }}</b-dropdown-item>
@@ -79,11 +79,11 @@
             </div>
         </div>
     </div>
-    <nav class="navbar" style="position: absolute; bottom: 0; height: 3em;">
+    <!-- <nav class="navbar" style="position: absolute; bottom: 0; height: 3em;">
       <div class="nav-contents container">
         <h6 class="created-by pt-1">Created by HoneyBadgerHackers</h6>
       </div>
-    </nav>
+    </nav> -->
   </div>
 </template>
 
@@ -128,7 +128,7 @@ export default {
     },
     dropdownClick({ id, name }) {
       this.selectedCategory = name;
-      this.categoryId = id;
+      this.categoryID = id;
     },
     getTradeOffers() {
       if (!this.profileItems.length) {
@@ -150,6 +150,35 @@ export default {
           });
           this.tradeOffers = sorted;
         });
+    },
+    getSortedItem() {
+      const config = {
+        headers: {
+          id_user: this.userId,
+          id_category: this.categoryID,
+          items: this.profileItems.map(item => item.id),
+        },
+      };
+      axios.get('/sortedTransactions', config)
+      .then(({ data: tradeItem }) => {
+        if (typeof tradeItem === 'string') {
+          const noItemResponse = {
+            name: 'Sorry!',
+            description: 'No more trade items can be found at this time, check back later or select "No Thanks" to refresh',
+            id: null,
+          };
+          this.currentTradeItem = noItemResponse;
+          this.categoryPic = 'http://www.clker.com/cliparts/A/x/z/U/T/p/no-trade-md.png';
+        } else {
+          this.currentTradeItem = tradeItem;
+          if (tradeItem.url_img) {
+            this.categoryPic = tradeItem.url_img;
+          } else {
+            this.getCategoryPic();
+          }
+        }
+        this.getTradeOffers();
+      });
     },
     getTradeItem() {
       const config = {
@@ -213,7 +242,11 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        this.getTradeItem();
+        if (!this.categoryID) {
+          this.getTradeItem();
+        } else {
+          this.getSortedItem();
+        }
         this.hide();
       })
       .catch((error) => {
@@ -239,7 +272,11 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        this.getTradeItem();
+        if (!this.categoryID) {
+          this.getTradeItem();
+        } else {
+          this.getSortedItem();
+        }
         this.hide();
       })
       .catch((error) => {
@@ -258,7 +295,13 @@ export default {
   },
   mounted() {
     this.getUserItems()
-    .then(this.getTradeItem)
+    .then(() => {
+      if (!this.categoryID) {
+        this.getTradeItem();
+      } else {
+        this.getSortedItem();
+      }
+    })
     .then(this.getTradeOffers);
   },
 };

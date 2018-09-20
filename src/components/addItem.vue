@@ -26,11 +26,7 @@
                   </div>
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
-                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"/>
-                  </div>
-                  <div class="form-group">
-                    <label for="descriotionArea">Item quality</label>
-                    <vue-stars @input="vueShared"></vue-stars>
+                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)" />
                   </div>
                 </form>
             </div>
