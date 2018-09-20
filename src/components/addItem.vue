@@ -26,11 +26,16 @@
                   </div>
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
-                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"/>
-                    <!-- <input v-model="imageUrl" type="text" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
-                    <!-- <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
-                    <!-- <input type="file" @change="onFileSelected"> -->
-                    
+
+                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
+                    <input 
+                    type="file"
+                    ref='fileInput'
+                    accept="image/*"
+                    style="display:none"
+                    @change="onFilePicked"
+                    /> -->
+
                   </div>
                 </form>
             </div>
@@ -39,7 +44,7 @@
               <button @click="addItem" type='button' class="btn btn-primary float-right">Add Item</button>
             </div>
       </b-modal>          
-    </div>
+   </div>
 </template>
 
 <script>
@@ -56,7 +61,7 @@ export default {
       categories: [],
       selectedCategory: 'Categories',
       categoryId: null,
-      imageUrl: '',
+      imageUrl: null,
     };
   },
   methods: {
