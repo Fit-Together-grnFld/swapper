@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Item = sequelize.define('Item', {
     description: DataTypes.STRING,
     name: DataTypes.STRING,
-    url_img: DataTypes.ARRAY,
+    url_img: DataTypes.ARRAY(DataTypes.STRING),
   });
 
   Item.associate = (models) => {
