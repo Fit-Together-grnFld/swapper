@@ -26,7 +26,8 @@
                   </div>
                   <div class="form-group">
                     <label for="descriptionArea">Image URL (optional)</label>
-                    <input v-model="imageUrl" type="text" class="form-control" id="urlArea" placeholder="image URL (optional)"></input>
+                    <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"/>
+                    <!-- <input v-model="imageUrl" type="text" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
                     <!-- <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)"></input> -->
                     <!-- <input type="file" @change="onFileSelected"> -->
                     
@@ -60,7 +61,14 @@ export default {
   },
   methods: {
     onFileSelected(event) {
-      this.imageUrl = event.target.files[0];
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        this.imageUrl = reader.result;
+      }, false);
+      if (file) {
+        reader.readAsDataURL(file);
+      }
     },
     showModal() {
       this.$refs.addItemModal.show();
