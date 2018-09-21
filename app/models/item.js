@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     name: DataTypes.STRING,
     url_img: DataTypes.STRING,
+    stars: DataTypes.INTEGER,
   });
 
   Item.associate = (models) => {
