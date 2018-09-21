@@ -20,17 +20,18 @@
           <div class="col-2">
             <button class="btn btn-test signout float-right" @click="auth.logout">Sign Out</button>
           </div>
-          <div class="dropdown">
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container main-container">
+      <div class="dropdown">
             <b-dropdown id="ddown2" :text="selectedCategory" class="m-md-2">
               <div class="scrollable-menu">
                 <b-dropdown-item v-for="(category,index) in categories" :category='category' :key='index' @click="dropdownClick(category)">{{ category.name }}</b-dropdown-item>
               </div>
             </b-dropdown>
           </div>
-        </div>
-      </div>
-    </nav>
-    <div class="container main-container">
         <b-modal ref="itemModal" :class="'item-modal-view'">
           <div slot="modal-header" class="w-100">
             <button class="close float-right" @click="hide">&times;</button>
@@ -193,6 +194,7 @@ export default {
       // console.log('unsorted');
       axios.get('/transactions', config)
       .then(({ data: tradeItem }) => {
+        console.log(tradeItem);
         if (typeof tradeItem === 'string') {
           const noItemResponse = {
             name: 'Sorry!',
@@ -229,11 +231,11 @@ export default {
     },
     rejectTradeItem() {
       // console.log('reject');
-      if (!this.currentTradeItem.id) {
-        this.offeredItems = [];
-        this.hide();
-        return;
-      }
+      // if (!this.currentTradeItem.id) {
+      //   this.offeredItems = [];
+      //   this.hide();
+      //   return;
+      // }
       const config = { data: [
         {
           id_user: this.userId,
@@ -248,7 +250,7 @@ export default {
       .then(() => {
         this.offeredItems = [];
         // console.log(this.categoryId);
-        if (this.categoryId === null) {
+        if (!this.categoryId) {
           this.getTradeItem();
         } else {
           this.getSortedItem();
@@ -327,6 +329,7 @@ h2 {
 .modal-body {
   max-height: 70vh;
   overflow-y: scroll;
+  overflow: visible;
 }
 
 .trade-photo {
@@ -335,8 +338,17 @@ h2 {
   object-fit: cover;
 }
 
+.scrollable-menu {
+    height: auto;
+    overflow: visible;
+}
+
 .btn {
   margin: 1px;
+}
+
+.ddown2 {
+  left: 400px;
 }
 
 li {
