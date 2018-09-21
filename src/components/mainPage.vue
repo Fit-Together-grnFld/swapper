@@ -66,6 +66,8 @@
                     <div class="card-block px-0">
                       <img v-b-popover.hover.bottom="currentTradeItem.description" :title="currentTradeItem.name" class="trade-photo rounded" v-bind:src="categoryPic"/>
                       <h2 class="card-title">{{currentTradeItem.name}}</h2>
+                      <h3>Quality:<vue-stars :max="5" :value="this.currentTradeItem.stars" :readonly="true"/></h3>
+                      <!-- <h3>{{currentTradeItem}}</h3> -->
                     </div>
                   </div>
                 </div>
@@ -129,7 +131,6 @@ export default {
     dropdownClick({ id, name }) {
       this.selectedCategory = name;
       this.categoryId = id;
-      // console.log(this.categoryId);
     },
     getTradeOffers() {
       if (!this.profileItems.length) {
