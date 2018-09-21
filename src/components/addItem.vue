@@ -28,6 +28,9 @@
                     <label for="descriptionArea">Image URL (optional)</label>
                     <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)" />
                   </div>
+                  <div>
+                      <vue-stars @input="vueShared"></vue-stars>
+                  </div>
                 </form>
             </div>
             <div slot="modal-footer" class="w-100">
