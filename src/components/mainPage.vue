@@ -129,6 +129,7 @@ export default {
     dropdownClick({ id, name }) {
       this.selectedCategory = name;
       this.categoryId = id;
+      // console.log(this.categoryId);
     },
     getTradeOffers() {
       if (!this.profileItems.length) {
@@ -159,7 +160,8 @@ export default {
           items: this.profileItems.map(item => item.id),
         },
       };
-      axios.get('/sortedTransactions', config)
+      console.log('sorted');
+      axios.get('/sorted', config)
       .then(({ data: tradeItem }) => {
         if (typeof tradeItem === 'string') {
           const noItemResponse = {
@@ -242,7 +244,8 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        if (!this.categoryId) {
+        console.log(this.categoryId);
+        if (this.categoryId === null) {
           this.getTradeItem();
         } else {
           this.getSortedItem();
@@ -272,7 +275,7 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        if (!this.categoryId) {
+        if (this.categoryId === null) {
           this.getTradeItem();
         } else {
           this.getSortedItem();
@@ -296,7 +299,7 @@ export default {
   mounted() {
     this.getUserItems()
     .then(() => {
-      if (!this.categoryId) {
+      if (this.categoryId === null) {
         this.getTradeItem();
       } else {
         this.getSortedItem();

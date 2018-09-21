@@ -39,7 +39,7 @@ const getSeenItems = (userId, itemArray) =>
   .catch(err =>
     console.error(err));
 
-app.get('/sortedTransactions', (req, res) => {
+app.get('/sorted', (req, res) => {
   console.log('sorted');
   console.log(req.headers);
   const {
