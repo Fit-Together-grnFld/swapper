@@ -28,6 +28,9 @@
                     <label for="descriptionArea">Image URL (optional)</label>
                     <input type="file" @change="onFileSelected" class="form-control" id="urlArea" placeholder="image URL (optional)" />
                   </div>
+                  <div>
+                    <vue-stars @input="vueShared"></vue-stars>
+                  </div>
                 </form>
             </div>
             <div slot="modal-footer" class="w-100">
@@ -59,7 +62,7 @@ export default {
   methods: {
     vueShared(event) {
       this.stars = event;
-      console.log(this.stars);
+      // console.log(this.stars);
     },
     onFileSelected(event) {
       const file = event.target.files[0];
@@ -88,7 +91,7 @@ export default {
           url_img: this.imageUrl.length ? this.imageUrl : 'https://lh3.googleusercontent.com/-ArPLZCGxfUU/VjurWOWnGbI/AAAAAAAAAM8/QFCBWkBXrHU/w530-h538-n-rw/deadpool_approves_by_kawkat-d68keqv.png',
           stars: this.stars,
         };
-        console.log(this.imageUrl);
+        // console.log(this.imageUrl);
         this.hideModal();
         axios.post('/items', config)
           .then((item) => {

@@ -49,7 +49,7 @@ const getSeenItems = (userId, itemArray) =>
       console.error(err));
 
 app.get('/transactions', (req, res) => {
-  // console.log(req.headers);
+  console.log('TRANSACTIONS');
   const { id_user: userId, items } = req.headers;
   const itemArray = items.split(',');
   getSeenItems(userId, itemArray).then((itemIds) => {
@@ -74,6 +74,7 @@ app.get('/transactions', (req, res) => {
 });
 
 app.post('/transactions', (req, res) => {
+  console.log('transaction');
   const { data: itemArray } = req.body;
   const promises = itemArray.map((item) => {
     const { id_item_offered, id_item_desired } = item;

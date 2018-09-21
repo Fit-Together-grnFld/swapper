@@ -160,7 +160,7 @@ export default {
           items: this.profileItems.map(item => item.id),
         },
       };
-      console.log('sorted');
+      // console.log('sorted');
       axios.get('/sorted', config)
       .then(({ data: tradeItem }) => {
         if (typeof tradeItem === 'string') {
@@ -189,6 +189,7 @@ export default {
           items: this.profileItems.map(item => item.id),
         },
       };
+      // console.log('unsorted');
       axios.get('/transactions', config)
       .then(({ data: tradeItem }) => {
         if (typeof tradeItem === 'string') {
@@ -226,6 +227,7 @@ export default {
       this.$refs.pendingTrades.show();
     },
     rejectTradeItem() {
+      // console.log('reject');
       if (!this.currentTradeItem.id) {
         this.offeredItems = [];
         this.hide();
@@ -244,7 +246,7 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        console.log(this.categoryId);
+        // console.log(this.categoryId);
         if (this.categoryId === null) {
           this.getTradeItem();
         } else {
