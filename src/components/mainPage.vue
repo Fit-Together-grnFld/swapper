@@ -20,17 +20,18 @@
           <div class="col-2">
             <button class="btn btn-test signout float-right" @click="auth.logout">Sign Out</button>
           </div>
-          <div class="dropdown">
-            <b-dropdown id="ddown1" :text="selectedCategory" class="m-md-2">
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container main-container">
+      <div class="dropdown">
+            <b-dropdown id="ddown2" :text="selectedCategory" class="m-md-2">
               <div class="scrollable-menu">
                 <b-dropdown-item v-for="(category,index) in categories" :category='category' :key='index' @click="dropdownClick(category)">{{ category.name }}</b-dropdown-item>
               </div>
             </b-dropdown>
           </div>
-        </div>
-      </div>
-    </nav>
-    <div class="container main-container">
         <b-modal ref="itemModal" :class="'item-modal-view'">
           <div slot="modal-header" class="w-100">
             <button class="close float-right" @click="hide">&times;</button>
@@ -98,7 +99,7 @@ export default {
   data() {
     return {
       selectedCategory: 'Categories',
-      categoryID: null,
+      categoryId: null,
       currentTradeItem: {},
       profileItems: [],
       tradeOffers: [],
@@ -130,7 +131,7 @@ export default {
     },
     dropdownClick({ id, name }) {
       this.selectedCategory = name;
-      this.categoryID = id;
+      this.categoryId = id;
     },
     getTradeOffers() {
       if (!this.profileItems.length) {
@@ -157,11 +158,12 @@ export default {
       const config = {
         headers: {
           id_user: this.userId,
-          id_category: this.categoryID,
+          id_category: this.categoryId,
           items: this.profileItems.map(item => item.id),
         },
       };
-      axios.get('/sortedTransactions', config)
+      // console.log('sorted');
+      axios.get('/sorted', config)
       .then(({ data: tradeItem }) => {
         if (typeof tradeItem === 'string') {
           const noItemResponse = {
@@ -189,8 +191,10 @@ export default {
           items: this.profileItems.map(item => item.id),
         },
       };
+      // console.log('unsorted');
       axios.get('/transactions', config)
       .then(({ data: tradeItem }) => {
+        console.log(tradeItem);
         if (typeof tradeItem === 'string') {
           const noItemResponse = {
             name: 'Sorry!',
@@ -226,11 +230,12 @@ export default {
       this.$refs.pendingTrades.show();
     },
     rejectTradeItem() {
-      if (!this.currentTradeItem.id) {
-        this.offeredItems = [];
-        this.hide();
-        return;
-      }
+      // console.log('reject');
+      // if (!this.currentTradeItem.id) {
+      //   this.offeredItems = [];
+      //   this.hide();
+      //   return;
+      // }
       const config = { data: [
         {
           id_user: this.userId,
@@ -244,7 +249,8 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        if (!this.categoryID) {
+        // console.log(this.categoryId);
+        if (!this.categoryId) {
           this.getTradeItem();
         } else {
           this.getSortedItem();
@@ -274,7 +280,7 @@ export default {
       axios.post('/transactions', config)
       .then(() => {
         this.offeredItems = [];
-        if (!this.categoryID) {
+        if (this.categoryId === null) {
           this.getTradeItem();
         } else {
           this.getSortedItem();
@@ -286,9 +292,9 @@ export default {
       });
     },
     getCategoryPic() {
-      const categoryID = this.currentTradeItem.id_category;
-      if (categoryID) {
-        const categoryPicArray = this.categories.filter(category => categoryID === category.id)[0].url_img.split('cats');
+      const categoryId = this.currentTradeItem.id_category;
+      if (categoryId) {
+        const categoryPicArray = this.categories.filter(category => categoryId === category.id)[0].url_img.split('cats');
         this.categoryPic = `../static/cats${categoryPicArray[1]}`;
       } else {
         this.categoryPic = 'https://vignette.wikia.nocookie.net/xmenmovies/images/7/7c/Deadpool_%28Thumbs_Up_-_Transparent%29.png/revision/latest/scale-to-width-down/350?cb=20170324222613';
@@ -298,7 +304,7 @@ export default {
   mounted() {
     this.getUserItems()
     .then(() => {
-      if (!this.categoryID) {
+      if (this.categoryId === null) {
         this.getTradeItem();
       } else {
         this.getSortedItem();
@@ -323,6 +329,7 @@ h2 {
 .modal-body {
   max-height: 70vh;
   overflow-y: scroll;
+  overflow: visible;
 }
 
 .trade-photo {
@@ -331,8 +338,17 @@ h2 {
   object-fit: cover;
 }
 
+.scrollable-menu {
+    height: auto;
+    overflow: visible;
+}
+
 .btn {
   margin: 1px;
+}
+
+.ddown2 {
+  left: 400px;
 }
 
 li {

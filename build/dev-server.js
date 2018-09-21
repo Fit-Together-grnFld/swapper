@@ -13,6 +13,7 @@ const express = require('express')
 const webpack = require('webpack')
 const itemRoutes = require('./route-handlers/db-items');
 const categoryRoutes = require("./route-handlers/db-categories");
+const sorted = require("./route-handlers/db-sortedTransaction")
 const transactionRoutes = require('./route-handlers/db-transactions');
 const userRoutes = require('./route-handlers/db-users');
 const proxyMiddleware = require('http-proxy-middleware')
@@ -35,6 +36,7 @@ app.use(itemRoutes);
 app.use(transactionRoutes);
 app.use(userRoutes); 
 app.use(categoryRoutes);
+app.use(sorted);
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
