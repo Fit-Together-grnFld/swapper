@@ -49,7 +49,7 @@ const getSeenItems = (userId, itemArray) =>
       console.error(err));
 
 app.get('/transactions', (req, res) => {
-  console.log('TRANSACTIONS');
+  console.log('req.headers');
   const { id_user: userId, items } = req.headers;
   const itemArray = items.split(',');
   getSeenItems(userId, itemArray).then((itemIds) => {
@@ -64,6 +64,7 @@ app.get('/transactions', (req, res) => {
       },
     })
     .then((item) => {
+      // console.log(item);
       res.send(item);
     })
     .catch((err) => {
